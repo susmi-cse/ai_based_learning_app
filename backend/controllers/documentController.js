@@ -17,8 +17,17 @@ const uploadDocument = async (req, res) => {
 
         // Parse PDF for text
         const dataBuffer = fs.readFileSync(filePath);
-        const pdfData = await pdfParse(dataBuffer);
-        const extractedText = pdfData.text;
+        
+        // BULLETPROOF PDF FIX: Checks how the server loaded the package
+        let extractedText = "";
+        try {
+            const parseDoc = typeof pdfParse === 'function' ? pdfParse : pdfParse.default;
+            const pdfData = await parseDoc(dataBuffer);
+            extractedText = pdfData.text;
+        } catch (parseError) {
+            console.error("Warning: Could not extract text. Saving file anyway.", parseError);
+            extractedText = "Text extraction unavailable for this document.";
+        }
 
         const document = await Document.create({
             title,
