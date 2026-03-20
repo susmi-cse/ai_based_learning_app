@@ -13,7 +13,7 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchStats = async () => {
             try {
-                const { data } = await axios.get('http://localhost:5000/api/dashboard/stats', {
+                const { data } = await axios.get('https://ai-based-learning-app.onrender.com/api/dashboard/stats', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setStatsData(data);

@@ -22,7 +22,7 @@ const QuizzesPage = () => {
     useEffect(() => {
         const fetchDocuments = async () => {
             try {
-                const { data } = await axios.get('http://localhost:5000/api/documents', {
+                const { data } = await axios.get('https://ai-based-learning-app.onrender.com/api/documents', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setDocuments(data);
@@ -44,7 +44,7 @@ const QuizzesPage = () => {
         setCurrentQuestionIdx(0);
 
         try {
-            const { data } = await axios.post('http://localhost:5000/api/ai/quiz', {
+            const { data } = await axios.post('https://ai-based-learning-app.onrender.com/api/ai/quiz', {
                 documentId: selectedDocId,
                 numQuestions: parseInt(numQuestions)
             }, { headers: { Authorization: `Bearer ${token}` } });

@@ -16,7 +16,7 @@ const DocumentLibrary = () => {
 
     const fetchDocuments = async () => {
         try {
-            const { data } = await axios.get('http://localhost:5000/api/documents', {
+            const { data } = await axios.get('https://ai-based-learning-app.onrender.com/api/documents', {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setDocuments(data);
@@ -42,7 +42,7 @@ const DocumentLibrary = () => {
         setError(null);
 
         try {
-            await axios.post('http://localhost:5000/api/documents/upload', formData, {
+            await axios.post('https://ai-based-learning-app.onrender.com/api/documents/upload', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     Authorization: `Bearer ${token}`
