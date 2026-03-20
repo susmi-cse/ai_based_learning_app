@@ -20,7 +20,7 @@ const DocumentViewer = () => {
     useEffect(() => {
         const fetchDocumentUrl = async () => {
             try {
-                const { data } = await axios.get(`https://ai-based-learning-app.onrender.com/api/documents/${id}/url`, {
+                const { data } = await axios.get(`https://ai-based-learning-app-1.onrender.com/api/documents/${id}/url`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setFileUrl(data.url);
@@ -45,7 +45,7 @@ const DocumentViewer = () => {
         setIsLoadingAI(true);
 
         try {
-            const { data } = await axios.post('https://ai-based-learning-app.onrender.com/api/ai/chat', {
+            const { data } = await axios.post('https://ai-based-learning-app-1.onrender.com/api/ai/chat', {
                 documentId: id,
                 prompt: userMessage
             }, { headers: { Authorization: `Bearer ${token}` } });
@@ -62,7 +62,7 @@ const DocumentViewer = () => {
         setMessages(prev => [...prev, { role: 'user', content: 'Please summarize this document.' }]);
         setIsLoadingAI(true);
         try {
-            const { data } = await axios.post('https://ai-based-learning-app.onrender.com/api/ai/summarize', {
+            const { data } = await axios.post('https://ai-based-learning-app-1.onrender.com/api/ai/summarize', {
                 documentId: id
             }, { headers: { Authorization: `Bearer ${token}` } });
 
@@ -81,7 +81,7 @@ const DocumentViewer = () => {
         setMessages(prev => [...prev, { role: 'user', content: `Explain the concept: "${concept}"` }]);
         setIsLoadingAI(true);
         try {
-            const { data } = await axios.post('https://ai-based-learning-app.onrender.com/api/ai/explain', {
+            const { data } = await axios.post('https://ai-based-learning-app-1.onrender.com/api/ai/explain', {
                 documentId: id,
                 concept
             }, { headers: { Authorization: `Bearer ${token}` } });

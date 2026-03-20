@@ -80,7 +80,7 @@ const getDocumentUrl = async (req, res) => {
         }
 
         // Return the static file serving URL
-        const fileUrl = `https://ai-based-learning-app.onrender.com/${document.storagePath.replace(/\\/g, '/')}`;
+        const fileUrl = `https://ai-based-learning-app-1.onrender.com/${document.storagePath.replace(/\\/g, '/')}`;
         res.json({ url: fileUrl });
 
     } catch (error) {

@@ -16,7 +16,7 @@ const FlashcardsPage = () => {
     useEffect(() => {
         const fetchDocuments = async () => {
             try {
-                const { data } = await axios.get('https://ai-based-learning-app.onrender.com/api/documents', {
+                const { data } = await axios.get('https://ai-based-learning-app-1.onrender.com/api/documents', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setDocuments(data);
@@ -33,7 +33,7 @@ const FlashcardsPage = () => {
         setIsGenerating(true);
         setError(null);
         try {
-            const { data } = await axios.post('https://ai-based-learning-app.onrender.com/api/ai/flashcards', {
+            const { data } = await axios.post('https://ai-based-learning-app-1.onrender.com/api/ai/flashcards', {
                 documentId: selectedDocId,
                 count: parseInt(numCards)
             }, { headers: { Authorization: `Bearer ${token}` } });

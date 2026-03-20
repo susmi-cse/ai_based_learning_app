@@ -10,7 +10,7 @@ const useAuthStore = create((set) => ({
     login: async (email, password) => {
         set({ isLoading: true, error: null });
         try {
-            const { data } = await axios.post('https://ai-based-learning-app.onrender.com/api/auth/login', { email, password });
+            const { data } = await axios.post('https://ai-based-learning-app-1.onrender.com/api/auth/login', { email, password });
             localStorage.setItem('user', JSON.stringify(data));
             localStorage.setItem('token', data.token);
             set({ user: data, token: data.token, isLoading: false });
@@ -24,7 +24,7 @@ const useAuthStore = create((set) => ({
     register: async (name, email, password) => {
         set({ isLoading: true, error: null });
         try {
-            const { data } = await axios.post('https://ai-based-learning-app.onrender.com/api/auth/register', { name, email, password });
+            const { data } = await axios.post('https://ai-based-learning-app-1.onrender.com/api/auth/register', { name, email, password });
             localStorage.setItem('user', JSON.stringify(data));
             localStorage.setItem('token', data.token);
             set({ user: data, token: data.token, isLoading: false });
