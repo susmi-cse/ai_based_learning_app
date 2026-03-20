@@ -3,8 +3,8 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 // Function to initialize the AI model
 const getModel = () => {
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-    // Use gemini-1.5-flash as the default for fast text tasks
-    return genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    // Use gemini-2.5-flash as the default for fast text tasks
+    return genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
 };
 
 const generateChatResponse = async (context, prompt) => {
