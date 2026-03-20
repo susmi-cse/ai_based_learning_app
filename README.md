@@ -4,7 +4,7 @@ A full-stack web application that transforms standard PDF documents into interac
 
 Users can upload their study materials and instantly generate AI-powered flashcards, comprehensive quizzes, detailed document summaries, and even chat directly with their document to explain complex concepts.
 
-**Live Demo:** [https://ai-based-learning-app-644o.vercel.app/dashboard](https://ai-based-learning-app-644o.vercel.app/dashboard)
+**Live Demo:** https://ai-based-learning-app-644o.vercel.app/dashboard
 **Backend API:** `https://ai-based-learning-app-1.onrender.com`
 
 ---
