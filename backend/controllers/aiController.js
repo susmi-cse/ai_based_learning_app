@@ -1,7 +1,7 @@
 const Document = require('../models/Document.js');
 const Flashcard = require('../models/Flashcard.js');
 const Quiz = require('../models/Quiz.js');
-const geminiService = require('../services/gemini-1.5-flash');
+const geminiService = require('../services/geminiService.js');
 
 // Helper to get document text and check auth
 const getDocumentContext = async (docId, userId) => {
